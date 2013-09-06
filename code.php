@@ -2,7 +2,7 @@
 $module = 'code';
 include('includes/header.tpl.php');
 
-$repos = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos"));
+$repos = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos?sort=updated"));
 
 $n_repos = $n_forks = 0;
 foreach($repos as $repo):
@@ -14,6 +14,7 @@ foreach($repos as $repo):
 endforeach;
 ?>
 <h2>Code <span style="float: right"><?php echo $n_repos; ?> repos, <?php echo $n_forks; ?> forks</span></h2>
+This is a list of my projects pulled directly from GitHub. They are sorted in descending order after the most recent updated.
 <?php
 foreach($repos as $repo):
 	$languages = json_decode(curl_get($repo->languages_url), true);
