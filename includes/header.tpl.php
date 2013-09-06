@@ -1,9 +1,12 @@
 <?php
+include('oauth/token.php');
+
 function curl_get($url) {
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_USERPWD, github_personal_token().':x-oauth-basic');
     $result = curl_exec($ch);
 
     curl_close($ch);
