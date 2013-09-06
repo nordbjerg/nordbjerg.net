@@ -68,6 +68,8 @@ nav ul {
             font-family: "Open Sans";
             font-size: 18px;
             text-decoration: none;
+	    transition: background-color 0.2s;
+	    -webkit-transition: background-color 0.2s;
         }
         nav ul li.current a,
         nav ul li a:hover {
