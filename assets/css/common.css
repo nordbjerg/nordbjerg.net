@@ -1,0 +1,233 @@
+/*--------------------------------------*\
+| Fonts 								 |
+\*--------------------------------------*/
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), local("OpenSans"), url("https://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff") format("woff");
+}
+
+/*--------------------------------------*\
+| Shared								 |
+\*--------------------------------------*/
+html,
+body {
+    background-color: #1d1d1d;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: rgb(83, 104, 247);
+    text-decoration: none;
+}
+
+/*--------------------------------------*\
+| Main  								 |
+\*--------------------------------------*/
+h1#logo {
+    color: white;
+    font-family: "Open Sans";
+}
+div#main {
+    margin: 50px auto;
+    width: 720px;
+}
+    div#main div#content {
+        background-color: white;
+        font-family: "Open Sans";
+        font-size: 14px;
+        padding: 8px;
+    }
+
+/*--------------------------------------*\
+| Navigation    						 |
+\*--------------------------------------*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+    nav ul li {
+        float: left;
+    }
+        nav ul li a {
+            background-color: white;
+            display: inline-block;
+            padding: 10px 0;
+            text-align: center;
+            width: 180px;
+            color: #1f1f1f;
+            font-family: "Open Sans";
+            font-size: 18px;
+            text-decoration: none;
+        }
+        nav ul li.current a,
+        nav ul li a:hover {
+            color: white;
+        }
+        nav ul li.home a {
+            border-top: 4px solid #00b358;
+        }
+        nav ul li.home.current a,
+        nav ul li.home a:hover {
+            background-color: #00b358;
+        }
+        nav ul li.blog a {
+            border-top: 4px solid #ff8c00;
+        }
+        nav ul li.blog.current a,
+        nav ul li.blog a:hover {
+            background-color: #ff8c00;
+        }
+        nav ul li.code a {
+            border-top: 4px solid #df004f;
+        }
+        nav ul li.code.current a,
+        nav ul li.code a:hover {
+            background-color: #df004f;
+        }
+        nav ul li.resume a {
+            border-top: 4px solid #007439;
+        }
+        nav ul li.resume.current a,
+        nav ul li.resume a:hover {
+            background-color: #007439;
+        }
+
+/*--------------------------------------*\
+| Code                                   |
+\*--------------------------------------*/
+div.project {
+    border-bottom: 1px dashed #dadada;
+    padding: 5px 10px;
+    margin: 0 -8px;
+}
+    div.project > .header {
+
+    }
+        div.project > .header > .title {
+            display: inline;
+            font-weight: bold;
+            font-size: 14px;
+            padding-bottom: 5px;
+            margin: 0;
+        }
+        div.project > .header > .lang {
+            float: right;
+            padding: 3px;
+            margin: 0 5px;
+        }
+    div.project > .description {
+        clear: both;
+        padding-bottom: 5px;
+    }
+div.project:last-child {
+    border: none;
+}
+
+/*--------------------------------------*\
+| Code - Language Colors                 |
+\*--------------------------------------*/
+.lang {
+    background-color: #cfcfcf;
+}
+.lang.javascript {
+    background-color: #F0DB4F;
+}
+.lang.ruby {
+    background-color: #AE0000;
+    color: white;
+}
+.lang.php {
+    background-color: #666699;
+    color: white;
+}
+.lang.css {
+    background-color: #1572B6;
+    color: white;
+}
+.lang.c {
+    background-color: red;
+    color: white;
+}
+.lang.cpp {
+    background-color: #404040;
+    color: white;
+}
+.lang.lua {
+    background-color: #00257A;
+    color: white;
+}
+.lang.python {
+    background-color: #366D9C;
+    color: white;
+}
+
+/*--------------------------------------*\
+| Blog                                   |
+\*--------------------------------------*/
+
+/*--------------------------------------*\
+| Media Queries							 |
+\*--------------------------------------*/
+@media only screen and (min-width: 320px) {
+
+    /* Small screen, non-retina */
+         
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) { 
+
+    /* Small screen, retina, stuff to override above media query */
+
+}
+
+@media only screen and (min-width: 700px) {
+
+    /* Medium screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 700px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (                min-resolution: 192dpi) and (min-width: 700px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 700px) { 
+
+    /* Medium screen, retina, stuff to override above media query */
+
+}
+
+@media only screen and (min-width: 1300px) {
+
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) { 
+
+    /* Large screen, retina, stuff to override above media query */
+
+}
