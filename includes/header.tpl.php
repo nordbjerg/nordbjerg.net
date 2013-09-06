@@ -21,6 +21,7 @@ function curl_get($url) {
     	<meta charset="utf-8" />
     	<!-- stylesheets !-->
     	<link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     </head>
     <body>
         <div id="main">
