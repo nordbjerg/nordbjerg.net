@@ -14,7 +14,9 @@ foreach($repos as $repo):
 endforeach;
 ?>
 <h2>Code <span style="float: right"><?php echo $n_repos; ?> repos, <?php echo $n_forks; ?> forks</span></h2>
-This is a list of my projects pulled directly from GitHub. They are sorted in descending order after the most recent updated.
+This is a list of my projects pulled directly from GitHub. They are sorted in descending order after the most recent updated.<br /><br />
+
+You can donate to me via <i class="icon-btc"></i>itcoin address 13hRKYkHNbKx76JfCwVANRYXHziuG2yuyJ
 <?php
 foreach($repos as $repo):
 	$languages = json_decode(curl_get($repo->languages_url), true);
