@@ -3,6 +3,7 @@ $module = 'code';
 include('includes/header.tpl.php');
 
 $repos = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos?sort=updated"));
+$ignore = ['Digitalocean-PHP-class', 'CVR-INFO', 'CPR-PHP'];
 
 $n_repos = $n_forks = 0;
 foreach($repos as $repo):
@@ -19,6 +20,7 @@ This is a list of my projects pulled directly from GitHub. They are sorted in de
 You can donate to me via <i class="icon-btc"></i>itcoin address 13hRKYkHNbKx76JfCwVANRYXHziuG2yuyJ
 <?php
 foreach($repos as $repo):
+	if(in_array($repo->name, $ignore)) continue;
 	$languages = json_decode(curl_get($repo->languages_url), true);
 	?>
 	<div class="project">
