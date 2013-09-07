@@ -1,4 +1,5 @@
 <?php include('includes/header.tpl.php'); ?>
+<img src="https://2.gravatar.com/avatar/f1013ce08855c8ba858feb7827585ad2?s=135" alt="Graphic depicting nordbjerg" title="The face of nordbjerg" style="float: left; margin: 5px 5px 0 0" />
 <b>Hi, I'm Oliver.</b> I'm a 17 year old all-around developer from Roskilde, Denmark.<br /><br />
 
 I'm an oddball by day, but by night I double as a mad scientist. I love pushing boundaries and researching things. I haven't done anything wild yet, but the day will come, I promise.<br /><br />
