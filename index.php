@@ -20,6 +20,9 @@ $app = new Silex\Application();
 // Register Twig
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
+    'twig.options' => [
+       'cache' => __DIR__.'/cache',
+    ],
 ));
 // Set globals
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
