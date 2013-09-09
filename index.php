@@ -46,23 +46,24 @@ $app->get('/blog', function () use ($app) {
 });
 
 $app->get('/code', function () use ($app) {
-	// Fetch repositories from GitHub
-	$repositories = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos?sort=updated"));
-	$ignore = ['Digitalocean-PHP-class', 'CVR-INFO', 'CPR-PHP'];
+// Fetch repositories from GitHub
+$repositories = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos?sort=updated"));
+$ignore = ['Digitalocean-PHP-class', 'CVR-INFO', 'CPR-PHP'];
 
-	// Filter out repositories
-	$langs = [];
-	$repos = [];
-	foreach($repositories as $repo) {
-		if(in_array($repo->name, $ignore)) continue;
+// Filter out repositories
+    $langs = [];
+    $repos = [];
+    foreach($repositories as $repo) {
+	if(in_array($repo->name, $ignore)) continue;
 
-		// Fetch languages
-		$languages = json_decode(curl_get($repo->languages_url), true);
-		foreach($languages as $lang => $lines) {
-			$langs[$repo->name][] = strtolower($lang);
-		}
-		$repos[] = $repo;
+	// Fetch languages
+	$languages = json_decode(curl_get($repo->languages_url), true);
+	foreach($languages as $lang => $lines) {
+		$langs[$repo->name][] = strtolower($lang);
 	}
+    
+    	$repos[] = $repo;
+    }
 
     return $app['twig']->render('code.twig', [
     	'repos' => $repos,
