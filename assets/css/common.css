@@ -36,6 +36,10 @@ h1#logo {
     color: white;
     font-family: "Open Sans";
 }
+    h1#logo a {
+        color: white;
+        text-decoration: none;
+    }
 div#main {
     margin: 50px auto;
     width: 720px;
