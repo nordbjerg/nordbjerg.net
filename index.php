@@ -1,19 +1,5 @@
 <?php
 require_once __DIR__.'/vendor/autoload.php';
-require_once __DIR__.'/oauth_token.php';
-
-// Small cURL wrapper
-function curl_get($url) {
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_USERPWD, github_personal_token().':x-oauth-basic');
-    $result = curl_exec($ch);
-
-    curl_close($ch);
-    return $result;
-}
 
 $app = new Silex\Application();
 
@@ -46,28 +32,29 @@ $app->get('/blog', function () use ($app) {
 });
 
 $app->get('/code', function () use ($app) {
-// Fetch repositories from GitHub
-$repositories = json_decode(curl_get("https://api.github.com/users/nordbjerg/repos?sort=updated"));
-$ignore = ['Digitalocean-PHP-class', 'CVR-INFO', 'CPR-PHP'];
-
-// Filter out repositories
-    $langs = [];
-    $repos = [];
-    foreach($repositories as $repo) {
-	if(in_array($repo->name, $ignore)) continue;
-
-	// Fetch languages
-	$languages = json_decode(curl_get($repo->languages_url), true);
-	foreach($languages as $lang => $lines) {
-		$langs[$repo->name][] = strtolower($lang);
-	}
-    
-    	$repos[] = $repo;
-    }
+    $projects = [
+	[
+	    'url' => 'https://github.com/Metapyziks/finalfrontier',
+	    'name' => 'Final Frontier',
+	    'desc' => 'Final Frontier is a gamemode for Garry\'s Mod 13',
+	    'tags' => ['lua']
+	],
+	[
+	    'url' => 'https://github.com/nordbjerg/VerbalExpressionsPHP',
+	    'name' => 'VerbalExpressionsPHP',
+	    'desc' => 'Makes using regular expressions in PHP less of a pain',
+	    'tags' => ['php']
+	],
+	[
+	    'url' => 'https://github.com/nordbjerg/CellFoneMod',
+	    'name' => 'CellFoneMod',
+	    'desc' => 'A mod for DarkRP, a gamemode for Garry\'s Mod 13. Adds cell phones.',
+	    'tags' => ['lua']
+        ]
+    ];
 
     return $app['twig']->render('code.twig', [
-    	'repos' => $repos,
-    	'langs' => $langs,
+    	'projects' => $projects,
     ]);
 });
 
