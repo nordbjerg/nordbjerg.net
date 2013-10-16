@@ -11,7 +11,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     ],
 ));
 // Set globals
-$app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
+$app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
     $twig->addGlobal('navigation', [
         "home" => [ "dest" => "/", "module" => "home" ],
         "blog" => [ "dest" => "/blog", "module" => "blog" ],
