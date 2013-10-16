@@ -5,13 +5,6 @@ setup:
     composer:
         action: "install"
 test:
-    php_unit:
-        config:
-            - "PHPUnit-all.xml"
-            - "PHPUnit-ubuntu-fix.xml"
-        directory:
-            - "tests/"
-        run_from: "phpunit/"
     php_mess_detector:
         allow_failures: true
     php_code_sniffer:
