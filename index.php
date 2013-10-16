@@ -35,7 +35,7 @@ $app->get('/code', function () use ($app) {
     $projects = [
         [
             'url' => 'https://github.com/Metapyziks/finalfrontier',
-	    'name' => 'Final Frontier',
+            'name' => 'Final Frontier',
             'desc' => 'Final Frontier is a gamemode for Garry\'s Mod 13',
             'tags' => ['lua']
         ],
